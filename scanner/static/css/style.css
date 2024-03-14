@@ -94,6 +94,11 @@
       margin-left: auto;
     }
   }
+
+  #up{
+    color: white;
+  }
+
   .landing-page header .links li:last-child {
     border-radius: 20px;
     padding: 10px 20px;

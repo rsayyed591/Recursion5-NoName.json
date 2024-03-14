@@ -1,37 +1,38 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <link rel="icon" type="image/png" href="{% static 'Dashboard/assets/img/favicon.ico' %}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
+    
     <title>Hospital Dashboard</title>
-
+    
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
-
-
+    
     <!-- Bootstrap core CSS     -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-
+    <link href="{% static 'Dashboard/assets/css/bootstrap.min.css' %}" rel="stylesheet" />
+    
     <!-- Animation library for notifications   -->
-    <link href="assets/css/animate.min.css" rel="stylesheet"/>
-
+    <link href="{% static 'Dashboard/assets/css/animate.min.css' %}" rel="stylesheet"/>
+    
     <!--  Light Bootstrap Table core CSS    -->
-    <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
-
-
+    <link href="{% static 'Dashboard/assets/css/light-bootstrap-dashboard.css' %}" rel="stylesheet"/>
+    
     <!--     Fonts and icons     -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    <link href="{% static 'Dashboard/assets/css/pe-icon-7-stroke.css' %}" rel="stylesheet" />
+    
+    
 
 </head>
 <body>
 
 
 <div class="wrapper">
-    <div class="sidebar" data-color="azure" data-image="assets/img/sidebar-5.jpg">
+    <div class="sidebar" data-color="azure" data-image="{% static 'DashBoard/assets/img/sidebar-5.jpg' %}">
 
         <div class="sidebar-wrapper">
             <div class="logo">
@@ -42,15 +43,15 @@
 
             <ul class="nav">
                 <li>
-                    <a href="dashboard.html">
+                    <a href="{% url 'dashboard' %}">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li class="active">
-                    <a href="user.html">
+                    <a href="{% url 'home' %}">
                         <i class="pe-7s-user"></i>
-                        <p>User Profile</p>
+                        <p>Home</p>
                     </a>
                 </li>
                 <li>
@@ -152,139 +153,23 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
+                    {% for i in reports %}
                     <!-- Repeat the card structure to create 12 cards -->
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Report 1</h4>
+                                <a href="{% url 'singlereport' i.id %}"><h4 class="title">{{i.date}}</h4></a>
                             </div>
                             <div class="font-icon-detail">
                                 <i class="pe-7s-album"></i>
-                                <input type="text" value="pe-7s-album">
+                                
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                      <div class="card">
-                          <div class="header">
-                              <h4 class="title">Report 2</h4>
-                          </div>
-                          <div class="font-icon-detail">
-                              <i class="pe-7s-album"></i>
-                              <input type="text" value="pe-7s-album">
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="card">
-                        <div class="header">
-                            <h4 class="title">Report 3</h4>
-                        </div>
-                        <div class="font-icon-detail">
-                            <i class="pe-7s-album"></i>
-                            <input type="text" value="pe-7s-album">
-                        </div>
-                    </div>
+                    {% endfor %}
+                    
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                  <div class="card">
-                      <div class="header">
-                          <h4 class="title">Report 4</h4>
-                      </div>
-                      <div class="font-icon-detail">
-                          <i class="pe-7s-album"></i>
-                          <input type="text" value="pe-7s-album">
-                      </div>
-                  </div>
-              </div>
-              <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="card">
-                    <div class="header">
-                        <h4 class="title">Report 5</h4>
-                    </div>
-                    <div class="font-icon-detail">
-                        <i class="pe-7s-album"></i>
-                        <input type="text" value="pe-7s-album">
-                    </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-              <div class="card">
-                  <div class="header">
-                      <h4 class="title">Report 6</h4>
-                  </div>
-                  <div class="font-icon-detail">
-                      <i class="pe-7s-album"></i>
-                      <input type="text" value="pe-7s-album">
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="card">
-                <div class="header">
-                    <h4 class="title">Report 7</h4>
-                </div>
-                <div class="font-icon-detail">
-                    <i class="pe-7s-album"></i>
-                    <input type="text" value="pe-7s-album">
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="card">
-              <div class="header">
-                  <h4 class="title">Report 8</h4>
-              </div>
-              <div class="font-icon-detail">
-                  <i class="pe-7s-album"></i>
-                  <input type="text" value="pe-7s-album">
-              </div>
-          </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="card">
-            <div class="header">
-                <h4 class="title">Report 9</h4>
-            </div>
-            <div class="font-icon-detail">
-                <i class="pe-7s-album"></i>
-                <input type="text" value="pe-7s-album">
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6">
-      <div class="card">
-          <div class="header">
-              <h4 class="title">Report 10</h4>
-          </div>
-          <div class="font-icon-detail">
-              <i class="pe-7s-album"></i>
-              <input type="text" value="pe-7s-album">
-          </div>
-      </div>
-  </div>
-  <div class="col-lg-3 col-md-4 col-sm-6">
-    <div class="card">
-        <div class="header">
-            <h4 class="title">Report 11</h4>
-        </div>
-        <div class="font-icon-detail">
-            <i class="pe-7s-album"></i>
-            <input type="text" value="pe-7s-album">
-        </div>
-    </div>
-</div>
-<div class="col-lg-3 col-md-4 col-sm-6">
-  <div class="card">
-      <div class="header">
-          <h4 class="title">Report 12</h4>
-      </div>
-      <div class="font-icon-detail">
-          <i class="pe-7s-album"></i>
-          <input type="text" value="pe-7s-album">
-      </div>
-  </div>
-</div>
                     <!-- Repeat this structure to create more cards -->
                 </div>
             </div>
