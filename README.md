@@ -42,7 +42,7 @@ To contribute:
 5. Push to the branch (`git push origin feature/your-feature-name`).
 6. Create a new pull request.
 
-For major changes, please open an issue first to discuss the changes you would like to make.
+For major changes, please open issue first to discuss the changes you would like to make.
 
 ## Hackathon
 
