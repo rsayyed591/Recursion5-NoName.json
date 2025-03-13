@@ -1,6 +1,6 @@
 # MedWell
 
-MedWell is a website designed for storing and managing medical reports of patients. It provides a platform where users can securely upload their medical reports and visualize key health indicators through interactive dashboards.
+MedWell is a website designed for storing and managing medical reports of patients. It provides a platform where users can securely upload their medical reports and visualize key health indicators through interactive dashboards. This is a Recursion 5.0 hackathon project.
 
 ## Table of Contents
 
